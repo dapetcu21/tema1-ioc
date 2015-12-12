@@ -9,12 +9,12 @@ const store = configureStore();
 
 export default class Root extends Component {
   render() {
-    const DevTools = DEBUG ? require('./DevTools').default : null;
+    const DevTools = __DEV__ ? require('./DevTools').default : null;
 
     return <Provider store={store}>
       <div>
         <App/>
-        {DEBUG ? <DevTools/> : null}
+        {__DEV__ ? <DevTools/> : null}
       </div>
     </Provider>;
   }

@@ -12,6 +12,9 @@ The [Redux dev tools][redux-devtools] are built in and hot reload is configured 
 
 `npm run build` to build for production
 
+You can check if you're in development or production mode with `if (__DEV__)`
+
+
 [Babel]:(http://babeljs.io/)
 [React]:(https://facebook.github.io/react/)
 [Redux]:(https://github.com/rackt/redux)

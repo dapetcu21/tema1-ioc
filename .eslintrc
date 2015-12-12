@@ -1,6 +1,6 @@
 {
   "globals": {
-    "DEBUG": true,
+    "__DEV__": true,
   },
   "ecmaFeatures": {
     "arrowFunctions": true,

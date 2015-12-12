@@ -37,7 +37,7 @@ const config = {
       template: 'src/assets/index.html',
     }),
     new webpack.DefinePlugin({
-      DEBUG: debug,
+      __DEV__: debug,
     }),
   ],
 };
@@ -55,6 +55,10 @@ if (debug) {
       }],
     }]
   );
+
+} else {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
 }
 
 module.exports = config;

@@ -6,7 +6,7 @@ import * as reducers from '../reducers';
 let createStoreWithMiddleware;
 
 // Configure the dev tools when in DEV mode
-if (DEBUG) {
+if (__DEV__) {
   const { persistState } = require('redux-devtools');
   const DevTools = require('../components/containers/DevTools').default;
   createStoreWithMiddleware = compose(
