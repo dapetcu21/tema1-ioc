@@ -15,7 +15,7 @@ const config = {
   devtool: debug ? '#source-map' : null,
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader: 'react-hot-loader!babel-loader', exclude: /node_modules/ },
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.json$/, loader: 'json' },
       { test: /\.scss$/, loader: ExtractText.extract('style', 'css?sourceMap!autoprefixer!sass') },
       { test: /\.sass$/, loader: ExtractText.extract('style', 'css?sourceMap!autoprefixer!sass?indentedSyntax=true') },
