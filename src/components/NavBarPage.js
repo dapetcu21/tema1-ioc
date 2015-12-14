@@ -6,7 +6,7 @@ export default class NavBarPage extends Component {
     return <div>
       <div>
         <div><Link to='/counter'>Counter</Link></div>
-        <div><Link to='/hello'>Hello</Link></div>
+        <div><Link to='/api-request'>API Request</Link></div>
       </div>
       {this.props.children}
     </div>;

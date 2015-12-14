@@ -3,7 +3,7 @@ import { Router, Route } from 'react-router';
 
 import NavBarPage from './NavBarPage';
 import CounterButtonPage from './CounterButtonPage';
-import HelloWorldPage from './HelloWorldPage';
+import APIRequestPage from './APIRequestPage';
 import NotFoundPage from './NotFoundPage';
 
 export default class Routes extends Component {
@@ -12,7 +12,7 @@ export default class Routes extends Component {
       <Route component={NavBarPage}>
         <Route path='/'>
           <Route path='counter' component={CounterButtonPage}/>
-          <Route path='hello' component={HelloWorldPage}/>
+          <Route path='api-request' component={APIRequestPage}/>
         </Route>
         <Route path='*' component={NotFoundPage}/>
       </Route>
