@@ -16,6 +16,7 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.4",
     "font-awesome": "^4.4.0",
+    "history": "^1.13.1",
     "html-webpack-plugin": "^1.6.1",
     "immutable": "^3.7.5",
     "json-loader": "^0.5.3",

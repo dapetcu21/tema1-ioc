@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import App from '../App';
+import Routes from '../Routes';
 import configureStore from '../../store/configureStore';
 
 import { Provider } from 'react-redux';
@@ -13,7 +13,7 @@ export default class Root extends Component {
 
     return <Provider store={store}>
       <div>
-        <App/>
+        <Routes/>
         {__DEV__ ? <DevTools/> : null}
       </div>
     </Provider>;
