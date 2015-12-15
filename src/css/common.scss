@@ -5,5 +5,14 @@ body {
 #react-root {
   display: flex;
   flex: 1;
+  height: 100vh;
   align-self: stretch;
+  align-items: stretch;
+}
+
+.__rootAppContainer {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  flex-direction: column;
 }

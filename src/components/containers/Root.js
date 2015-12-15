@@ -12,7 +12,7 @@ export default class Root extends Component {
     const DevTools = __DEV__ ? require('./DevTools').default : null;
 
     return <Provider store={store}>
-      <div>
+      <div className='__rootAppContainer'>
         <Routes/>
         {__DEV__ ? <DevTools/> : null}
       </div>
