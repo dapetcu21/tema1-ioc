@@ -11,6 +11,7 @@ const config = {
   output: {
     path: './build',
     filename: '[name].js',
+    publicPath: process.env.PUBLIC_PATH || '/',
   },
   devtool: debug ? '#source-map' : null,
   module: {
