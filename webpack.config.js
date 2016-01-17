@@ -6,7 +6,7 @@ const debug = process.env.NODE_ENV !== 'production';
 
 const config = {
   entry: {
-    main: './src',
+    main: ['babel-polyfill', './src'],
   },
   output: {
     path: './build',
