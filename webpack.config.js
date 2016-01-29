@@ -46,6 +46,9 @@ const config = {
       __DEV__: debug,
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 if (debug) {
