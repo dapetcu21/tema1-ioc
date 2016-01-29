@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import NavBarPage from './NavBarPage';
 import CounterButtonPage from './CounterButtonPage';
@@ -8,7 +8,7 @@ import NotFoundPage from './NotFoundPage';
 
 export default class Routes extends Component {
   render() {
-    return <Router>
+    return <Router history={browserHistory}>
       <Route component={NavBarPage}>
         <Route path='/'>
           <Route path='counter' component={CounterButtonPage}/>

@@ -1,8 +1,10 @@
 const HTMLWebpack = require('html-webpack-plugin');
 const ExtractText = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 const debug = process.env.NODE_ENV !== 'production';
+const localIdentName = debug ? 'localIdentName=[name]__[local]___[hash:base64:5]' : 'localIdentName=[hash:base64:5]';
 
 const config = {
   entry: {
@@ -18,11 +20,14 @@ const config = {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.json$/, loader: 'json' },
-      { test: /\.scss$/, loader: ExtractText.extract('style', 'css?sourceMap!autoprefixer!sass') },
-      { test: /\.sass$/, loader: ExtractText.extract('style', 'css?sourceMap!autoprefixer!sass?indentedSyntax=true') },
-      { test: /\.css$/, loader: ExtractText.extract('style', 'css?sourceMap!autoprefixer') },
+      { test: /\.scss$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!postcss!sass`) },
+      { test: /\.sass$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!sass!postcss`) },
+      { test: /\.css$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!postcss`) },
       { test: /\.(png|jpg|woff2?|ttf|eot|svg)(\?|$)/, loader: 'file' },
     ],
+  },
+  postcss() {
+    return [autoprefixer];
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json'],

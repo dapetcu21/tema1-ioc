@@ -6,9 +6,10 @@ import { sampleIncrement } from '../actions/SampleActions';
   counter: state.sampleCounter,
 }))
 export default class CounterButton extends Component {
+
   buttonClicked = () => {
     this.props.dispatch(sampleIncrement());
-  }
+  };
 
   render() {
     const { counter } = this.props;

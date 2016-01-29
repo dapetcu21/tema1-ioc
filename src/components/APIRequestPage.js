@@ -7,13 +7,14 @@ import { sampleAPIRequest, sampleAPIRequestIfNeeded } from '../actions/SampleAct
   remoteData: state.sampleRemoteData,
 }))
 export default class APIRequestPage extends Component {
+
   requestData = () => {
     this.props.dispatch(sampleAPIRequest());
-  }
+  };
 
   requestDataIfNeeded = () => {
     this.props.dispatch(sampleAPIRequestIfNeeded());
-  }
+  };
 
   render() {
     const { remoteData } = this.props;
