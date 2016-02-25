@@ -21,7 +21,7 @@ const config = {
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.json$/, loader: 'json' },
       { test: /\.scss$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!postcss!sass`) },
-      { test: /\.sass$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!sass!postcss`) },
+      { test: /\.sass$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!postcss!sass?indentedSyntax=true`) },
       { test: /\.css$/, loader: ExtractText.extract('style', `css?sourceMap&${localIdentName}!postcss`) },
       { test: /\.(png|jpg|woff2?|ttf|eot|svg)(\?|$)/, loader: 'file' },
     ],
