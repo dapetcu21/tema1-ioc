@@ -2,7 +2,7 @@ import { SAMPLE_INCREMENT } from '../constants/ActionTypes';
 import { handleActions } from 'redux-actions';
 
 export default handleActions({
-  [SAMPLE_INCREMENT]: (state, { payload }) => state + payload,
+  [SAMPLE_INCREMENT]: (state, { payload }) => state + payload
 }, 0);
 
 // Does the same thing the conventional way

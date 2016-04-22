@@ -6,7 +6,7 @@ import { SAMPLE_INCREMENT, SAMPLE_REQUEST, SAMPLE_RESPONSE } from '../constants/
 export const sampleIncrement = createAction(SAMPLE_INCREMENT, (amount = 1) => amount);
 
 // Does the same thing
-export function conventionalSampleIncrement(payload = 1) {
+export function conventionalSampleIncrement (payload = 1) {
   return { type: SAMPLE_INCREMENT, payload };
 }
 

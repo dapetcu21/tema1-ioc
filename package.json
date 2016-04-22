@@ -44,17 +44,26 @@
     "when": "^3.7.3"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.3",
     "babel-plugin-react-transform": "^2.0.0-beta1",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
     "redux-devtools": "3.0.0",
     "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.1"
+    "redux-devtools-log-monitor": "^1.0.1",
+    "semistandard": "^7.0.5"
   },
   "scripts": {
     "start": "PUBLIC_PATH=\"http://localhost:8080/\" webpack-dev-server --inline --hot --content-base build",
     "build": "NODE_ENV=production webpack"
+  },
+  "semistandard": {
+    "globals": [
+      "__DEV__",
+      "fetch"
+    ],
+    "parser": "babel-eslint"
   },
   "author": "",
   "license": "ISC"

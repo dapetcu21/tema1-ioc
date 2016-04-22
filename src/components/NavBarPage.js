@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 export default class NavBarPage extends Component {
-  render() {
+  static propTypes = {
+    children: React.PropTypes.node
+  };
+
+  render () {
     return <div>
       <div>
         <div><Link to='/counter'>Counter</Link></div>

@@ -20,7 +20,7 @@ if (__DEV__) {
 
 const rootReducer = combineReducers(reducers);
 
-export default function configureStore(initialState) {
+export default function configureStore (initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
   if (module.hot) {
     module.hot.accept('../reducers', () => {

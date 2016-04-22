@@ -1,6 +1,6 @@
 const apiURL = 'http://jsonplaceholder.typicode.com';
 
-export function apiCall(method, path, data, opts) {
+export function apiCall (method, path, data, opts) {
   opts = opts || {};
   opts.request = opts.request || {};
 
@@ -8,9 +8,9 @@ export function apiCall(method, path, data, opts) {
     method,
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
-    json: true,
+    json: true
   };
 
   if (data) {

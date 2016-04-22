@@ -7,7 +7,7 @@ import APIRequestPage from './APIRequestPage';
 import NotFoundPage from './NotFoundPage';
 
 export default class Routes extends Component {
-  render() {
+  render () {
     return <Router history={browserHistory}>
       <Route component={NavBarPage}>
         <Route path='/'>

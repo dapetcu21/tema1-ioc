@@ -17,7 +17,7 @@ export default handleActions({
     throw: (state, { payload }) => state
       .set('loadState', 'error')
       .set('error', payload)
-      .set('data', null),
-  },
+      .set('data', null)
+  }
 
 }, Immutable.fromJS({ loadState: 'none', data: null, error: null }));

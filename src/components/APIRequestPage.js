@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Map } from 'immutable';
 
 import { sampleAPIRequest, sampleAPIRequestIfNeeded } from '../actions/SampleActions';
 
 @connect(state => ({
-  remoteData: state.sampleRemoteData,
+  remoteData: state.sampleRemoteData
 }))
 export default class APIRequestPage extends Component {
+
+  static propTypes = {
+    dispatch: React.PropTypes.func,
+    remoteData: React.PropTypes.instanceOf(Map)
+  };
 
   requestData = () => {
     this.props.dispatch(sampleAPIRequest());
@@ -16,7 +22,7 @@ export default class APIRequestPage extends Component {
     this.props.dispatch(sampleAPIRequestIfNeeded());
   };
 
-  render() {
+  render () {
     const { remoteData } = this.props;
 
     return <div>
