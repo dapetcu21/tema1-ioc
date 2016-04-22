@@ -3,20 +3,10 @@ import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from 'redux-promise';
 import * as reducers from '../reducers';
 
-let createStoreWithMiddleware;
-
-// Configure the dev tools when in DEV mode
-if (__DEV__) {
-  const { persistState } = require('redux-devtools');
-  const DevTools = require('../components/containers/DevTools').default;
-  createStoreWithMiddleware = compose(
-    applyMiddleware(thunkMiddleware, promiseMiddleware),
-    DevTools.instrument(),
-    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-  )(createStore);
-} else {
-  createStoreWithMiddleware = applyMiddleware(thunkMiddleware, promiseMiddleware)(createStore);
-}
+const createStoreWithMiddleware = compose(
+  applyMiddleware(thunkMiddleware, promiseMiddleware),
+  __DEV__ && window.devToolsExtension ? window.devToolsExtension() : f => f
+)(createStore);
 
 const rootReducer = combineReducers(reducers);
 
