@@ -41,7 +41,8 @@
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "whatwg-fetch": "^0.11.0",
-    "when": "^3.7.7"
+    "when": "^3.7.7",
+    "serve": "^1.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.3",
