@@ -43,7 +43,8 @@ const config = {
       template: 'src/assets/index.html'
     }),
     new webpack.DefinePlugin({
-      __DEV__: debug
+      __DEV__: debug,
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
   devServer: {
