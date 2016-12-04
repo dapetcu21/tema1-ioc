@@ -1,7 +1,7 @@
-import { handleActions } from 'redux-actions';
-import Immutable from 'immutable';
+import { handleActions } from 'redux-actions'
+import Immutable from 'immutable'
 
-import { SAMPLE_REQUEST, SAMPLE_RESPONSE } from '../constants/ActionTypes';
+import { SAMPLE_REQUEST, SAMPLE_RESPONSE } from '../constants/ActionTypes'
 
 export default handleActions({
   [SAMPLE_REQUEST]: state => state
@@ -20,4 +20,4 @@ export default handleActions({
       .set('data', null)
   }
 
-}, Immutable.fromJS({ loadState: 'none', data: null, error: null }));
+}, Immutable.fromJS({ loadState: 'none', data: null, error: null }))

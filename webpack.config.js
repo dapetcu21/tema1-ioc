@@ -1,10 +1,10 @@
-const HTMLWebpack = require('html-webpack-plugin');
-const ExtractText = require('extract-text-webpack-plugin');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+const HTMLWebpack = require('html-webpack-plugin')
+const ExtractText = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
 
-const debug = process.env.NODE_ENV !== 'production';
-const localIdentName = debug ? 'localIdentName=[name]__[local]___[hash:base64:5]' : 'localIdentName=[hash:base64:5]';
+const debug = process.env.NODE_ENV !== 'production'
+const localIdentName = debug ? 'localIdentName=[name]__[local]___[hash:base64:5]' : 'localIdentName=[hash:base64:5]'
 
 const config = {
   entry: {
@@ -27,7 +27,7 @@ const config = {
     ]
   },
   postcss () {
-    return [autoprefixer];
+    return [autoprefixer]
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
@@ -50,7 +50,7 @@ const config = {
   devServer: {
     historyApiFallback: true
   }
-};
+}
 
 if (debug) {
   config.babel.plugins.push(
@@ -64,10 +64,10 @@ if (debug) {
         'imports': ['react', 'redbox-react']
       }]
     }]
-  );
+  )
 } else {
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-  config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin())
+  config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true))
 }
 
-module.exports = config;
+module.exports = config
