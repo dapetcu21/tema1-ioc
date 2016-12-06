@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import { requestWeather } from '../actions/WeatherActions'
-import WeatherTemp from './WeatherTemp.js'
-import WeatherHumidity from './WeatherHumidity.js'
-import WeatherPressure from './WeatherPressure.js'
+import { getWeather } from '../actions/WeatherActions'
+import WeatherTemp from './WeatherTemp'
+import WeatherHumidity from './WeatherHumidity'
+import WeatherPressure from './WeatherPressure'
+import Lights from './Lights'
 
 @connect()
 export default class RootPage extends Component {
   componentWillMount () {
-    this.props.dispatch(requestWeather())
+    this.props.dispatch(getWeather())
   }
 
   render () {
@@ -25,6 +26,11 @@ export default class RootPage extends Component {
           </Col>
           <Col sm={4}>
             <WeatherPressure />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <Lights />
           </Col>
         </Row>
       </Grid>

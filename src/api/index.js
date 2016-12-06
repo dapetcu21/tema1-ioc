@@ -31,6 +31,18 @@ export function apiCall (method, path, data, opts) {
     })
 }
 
-export function getWeather () {
+export function apiGetWeather () {
   return apiCall('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Bucharest&APPID=45978b79903c0e325980ff3785398e66', null, { absolute: true })
+}
+
+export function apiGetRooms () {
+  return apiCall('GET', '/rooms')
+}
+
+export function apiGetBulbs () {
+  return apiCall('GET', '/bulbs')
+}
+
+export function apiToggleBulb (bulbId, state) {
+  return apiCall('PATCH', `/bulbs/${bulbId}/${state ? 'on' : 'off'}`)
 }
