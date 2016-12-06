@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col, Panel } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import { getWeather } from '../actions/WeatherActions'
@@ -13,6 +13,21 @@ import Utilities from './Utilities'
 export default class RootPage extends Component {
   componentWillMount () {
     this.props.dispatch(getWeather())
+  }
+
+  renderHousePlan () {
+    const header = (
+      <span>
+        <i className='fa fa-map' />
+        &nbsp; House plan
+      </span>
+    )
+
+    return (
+      <Panel header={header}>
+        <img src={require('./house_plan.jpg')} style={{ width: '100%' }} />
+      </Panel>
+    )
   }
 
   render () {
@@ -34,6 +49,9 @@ export default class RootPage extends Component {
         </Row>
         <Row>
           <Col xs={12}><Lights /></Col>
+        </Row>
+        <Row>
+          <Col xs={12}>{this.renderHousePlan()}</Col>
         </Row>
       </Grid>
     )
