@@ -6,6 +6,10 @@
   margin-bottom: 0.5em;
 }
 
+:local .container:last-child {
+  margin-bottom: 0;
+}
+
 :local .name {
   flex: 1;
   display: block;
