@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Navbar } from 'react-bootstrap'
+
+import styles from './NavBarPage.scss'
 
 export default class NavBarPage extends Component {
   static propTypes = {
@@ -7,12 +9,20 @@ export default class NavBarPage extends Component {
   }
 
   render () {
-    return <div>
-      <div>
-        <div><Link to='/counter'>Counter</Link></div>
-        <div><Link to='/api-request'>API Request</Link></div>
+    return (
+      <div className={styles.container}>
+        <Navbar fixedTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <i className='fa fa-home' />
+              &nbsp; Smart Home
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+        <div className={styles.content}>
+          {this.props.children}
+        </div>
       </div>
-      {this.props.children}
-    </div>
+    )
   }
 }
