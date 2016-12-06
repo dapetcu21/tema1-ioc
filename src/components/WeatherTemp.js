@@ -14,8 +14,13 @@ export default class WeatherTemp extends Component {
       ? Math.round((weather.main.temp - 273.15) * 10) / 10
       : '-'
 
+    const header = <span>
+      <i className='fa fa-thermometer-full' />
+      &nbsp; Temperature outside
+    </span>
+
     return (
-      <Panel header='Temperature outside'>
+      <Panel header={header}>
         <h1 className={styles.widgetContent}>{value} ˚C</h1>
       </Panel>
     )

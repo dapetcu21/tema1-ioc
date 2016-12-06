@@ -14,8 +14,13 @@ export default class WeatherPressure extends Component {
       ? Math.round((weather.main.grnd_level || weather.main.pressure) * 10) / 10
       : '-'
 
+    const header = <span>
+      <i className='fa fa-cloud' />
+      &nbsp; Air pressure
+    </span>
+
     return (
-      <Panel header='Air pressure'>
+      <Panel header={header}>
         <h1 className={styles.widgetContent}>{value} hPa</h1>
       </Panel>
     )

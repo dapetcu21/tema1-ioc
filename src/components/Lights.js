@@ -16,8 +16,12 @@ export default class Lightbulbs extends Component {
 
   render () {
     const { bulbs } = this.props
+    const header = <span>
+      <i className='fa fa-lightbulb-o' />
+      &nbsp; Lights
+    </span>
     return (
-      <Panel header='Lights'>
+      <Panel header={header}>
         {Object.keys(bulbs).map(id =>
           <Bulb key={id} bulb={bulbs[id]} />
         )}

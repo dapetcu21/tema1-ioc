@@ -14,8 +14,13 @@ export default class WeatherHumidity extends Component {
       ? Math.round(weather.main.humidity * 10) / 10
       : '-'
 
+    const header = <span>
+      <i className='fa fa-tint' />
+      &nbsp; Humidity
+    </span>
+
     return (
-      <Panel header='Humidity'>
+      <Panel header={header}>
         <h1 className={styles.widgetContent}>{value}%</h1>
       </Panel>
     )
