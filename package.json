@@ -41,8 +41,7 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
-    "whatwg-fetch": "^2.0.1",
-    "when": "^3.7.7"
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
