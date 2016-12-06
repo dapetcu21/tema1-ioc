@@ -1,15 +1,24 @@
-# Boilerplate
+# Tema 1 IOC
+## Marius Petcu - 343C4
 
-My own frontend boilerplate for a [React](https://facebook.github.io/react/)/[Redux](https://github.com/rackt/redux) project.
+URL proiect: http://petcu-ioc-1.herokuapp.com/
+URL repository de cod: https://github.com/dapetcu21/tema1-ioc
 
-I use [Webpack](https://webpack.github.io) for packaging. [Babel](http://babeljs.io/) is configured with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) (ES6+ES7) and [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) support. CSS is passed through [SaSS](http://sass-lang.com) and [autoprefixer](https://github.com/postcss/autoprefixer).
+Folosesc 2 API-uri:
+* Un API custom făcut împreună cu un coleg
+* API-ul openweathermap.org
 
-The [Redux dev tools](https://github.com/gaearon/redux-devtools) are built in and hot reload is configured for reducers and React components.
+Parametrii monitorizați / controlabili:
+* Temperatură / Umiditate / Presiunea aerului
+* Luminile din diverse camere
+* Valvă Gaz
+* Valvă Apă
 
-# Usage
+Requesturi folosite:
+* Get weather data for Bucharest
+* Get/set gas status
+* Get/set water status
+* Get room list
+* Get lights list
+* Set lights status
 
-`npm start` to start watching with [webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
-
-`npm run build` to build for production
-
-You can check if you're in development or production mode with `if (__DEV__)`
