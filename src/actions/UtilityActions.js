@@ -9,7 +9,7 @@ import {
 export const getUtility = (id) => {
   return (dispatch) => {
     dispatch(createAction(UTILITY_REQUEST)())
-    const promiseForCall = apiGetUtility(id).then(state => ({ id, state }))
+    const promiseForCall = apiGetUtility(id).then(state => ({ id, state: state.status }))
     dispatch(createAction(UTILITY_RESPONSE)(promiseForCall))
   }
 }
@@ -17,7 +17,7 @@ export const getUtility = (id) => {
 export const toggleUtility = (id, newState) => {
   return (dispatch) => {
     dispatch(createAction(UTILITY_TOGGLE_REQUEST)())
-    const promiseForCall = apiToggleUtility(id, newState).then(state => ({ id, state }))
+    const promiseForCall = apiToggleUtility(id, newState).then(state => ({ id, state: state.status }))
     dispatch(createAction(UTILITY_TOGGLE_RESPONSE)(promiseForCall))
   }
 }
