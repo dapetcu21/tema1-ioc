@@ -7,6 +7,7 @@ import WeatherTemp from './WeatherTemp'
 import WeatherHumidity from './WeatherHumidity'
 import WeatherPressure from './WeatherPressure'
 import Lights from './Lights'
+import Utilities from './Utilities'
 
 @connect()
 export default class RootPage extends Component {
@@ -29,9 +30,10 @@ export default class RootPage extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
-            <Lights />
-          </Col>
+          <Col xs={12}><Utilities /></Col>
+        </Row>
+        <Row>
+          <Col xs={12}><Lights /></Col>
         </Row>
       </Grid>
     )

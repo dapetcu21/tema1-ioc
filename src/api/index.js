@@ -46,3 +46,11 @@ export function apiGetBulbs () {
 export function apiToggleBulb (bulbId, state) {
   return apiCall('PATCH', `/bulbs/${bulbId}/${state ? 'on' : 'off'}`)
 }
+
+export function apiGetUtility (utilityId) {
+  return apiCall('GET', `/${utilityId}`)
+}
+
+export function apiToggleUtility (utilityId, state) {
+  return apiCall('PATCH', `/${utilityId}/${state ? 'on' : 'off'}`)
+}
